@@ -2,7 +2,7 @@ body {
   margin: 0;
   font-size: 16px;
   font-family: Source Code Pro;
-  background-color: black;
+  background-color: white;
   color: white;
 }
 
@@ -31,12 +31,12 @@ body {
 
 #navbar a:hover {
   background-color: white;
-  color: white;
+  color: black;
 }
 
 #navbar a.active {
   background-color: white;
-  color: white;
+  color: black;
 }
 
 .hero-image{
