@@ -2,16 +2,8 @@ body {
   margin: 0;
   font-size: 16px;
   font-family: Source Code Pro;
-  background-color: white;
+  background-color: #232f3e;
   color: white;
-}
-
-.header {
-  color: white;
-  background-color: black;
-  padding: 10px;
-  margin-top: -5px;
-  text-align: center;
 }
 
 #navbar {
@@ -27,7 +19,7 @@ body {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 15px;
 }
 
 #navbar a:hover {
@@ -43,4 +35,12 @@ body {
 .heroimage img {
   width: 100%;
   height: auto;
+  margin-bottom: -5px;
+}
+
+@media screen and (max-width:650px){
+  #navbar a{
+    float: none;
+    width: 100%;
+  }
 }
