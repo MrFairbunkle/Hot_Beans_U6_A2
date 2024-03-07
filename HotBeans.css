@@ -24,7 +24,7 @@ body {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 15px;
-  width: 16.7%;
+  width: 10%;
   border-color: white;
   border-width: 1px;
 }
@@ -45,18 +45,18 @@ body {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 15px;
-  width: 16.7%
+  width: 10%
 }
 
 #navbar .socials {
-  float: left;
+  float: right;
   background-color: black;
   color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 15px;
-  width: 16.7%
+  width: 10%
 }
 
 .heroimage img {
