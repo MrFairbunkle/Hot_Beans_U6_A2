@@ -13,6 +13,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
+  width: 100%;
 }
 
 #navbar li {
@@ -23,25 +24,47 @@ body {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 15px;
+  width: 16.7%;
+  border-color: white;
+  border-width: 1px;
 }
 
 #navbar li:hover {
   background-color: white;
   color: black;
+  text-decoration: none;
+  border-color: white;
+  border-width: 1px;
 }
 
 #navbar li.active {
   background-color: white;
   color: black;
+  text-decoration: none;
+  border-color: white;
+  border-width: 1px;
 }
 
 #navbar .logo {
   float: left;
+  background-color: black;
   color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 15px;
+  width: 16.7%
+}
+
+#navbar .socials {
+  float: left;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  width: 16.7%
 }
 
 .heroimage img {
@@ -56,6 +79,11 @@ body {
 
 @media screen and (max-width: 650px) {
   #navbar li {
+    float: none;
+    width: 100%;
+  }
+
+  #navbar .logo {
     float: none;
     width: 100%;
   }
