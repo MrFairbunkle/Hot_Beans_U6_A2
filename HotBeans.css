@@ -38,6 +38,16 @@ body {
   margin-bottom: -5px;
 }
 
+.pagetitle {
+  text-align: center;
+}
+
+
+
+
+
+
+
 @media screen and (max-width:650px){
   #navbar a{
     float: none;
