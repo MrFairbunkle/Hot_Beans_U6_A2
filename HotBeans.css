@@ -37,14 +37,6 @@ body {
   border-width: 1px;
 }
 
-#navbar li.active {
-  background-color: white;
-  color: black;
-  text-decoration: none;
-  border-color: white;
-  border-width: 1px;
-}
-
 #navbar .logo {
   float: left;
   background-color: black;
@@ -81,10 +73,21 @@ body {
   #navbar li {
     float: none;
     width: 100%;
+    text-decoration: none;
+  }
+
+  #navbar li:hover {
+    text-decoration: none;
   }
 
   #navbar .logo {
-    float: none;
+    float: center;
+    width: 100%;
+    padding-bottom: 30px;
+  }
+
+  #navbar .socials {
+    float: center;
     width: 100%;
   }
 }
