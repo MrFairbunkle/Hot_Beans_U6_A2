@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', (event) => {
         const sections = document.querySelectorAll('section');
-        const navbarLinks = document.querySelectorAll('#navbar a');
+        const navbarLinks = document.querySelectorAll('#navbar li a');
 
         function makeActive() {
           const scrollPosition = window.scrollY;
