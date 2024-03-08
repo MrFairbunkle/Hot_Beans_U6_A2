@@ -71,6 +71,47 @@ body {
   text-align: center;
 }
 
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-content ul {
+    list-style: none;
+}
+
+.footer-content ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.footer-content ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-content ul li a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
 @media screen and (max-width: 650px) {
   #navbar li {
     float: none;
