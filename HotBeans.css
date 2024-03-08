@@ -83,6 +83,10 @@ footer {
     color: #fff;
     text-align: center;
     padding: 20px 0;
+    position: fixed; 
+    width: 100%; 
+    bottom: 0; 
+    left: 0;
 }
 
 .footer-content {
