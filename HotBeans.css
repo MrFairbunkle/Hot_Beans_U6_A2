@@ -62,8 +62,10 @@ body {
   }
 
   .teamimages{
-    width: 200px;
-    height: 200px;  
+    display: block;
+    width: 400px;
+    height: 250px;  
+    margin: 0 auto;
   }
 
   .wrapper {
