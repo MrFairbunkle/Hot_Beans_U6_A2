@@ -34,3 +34,17 @@ window.addEventListener('scroll', function() {
       });
     });
   });
+
+  function myFunction() {
+    var x = document.getElementById("myLinks");
+    var container = document.querySelector('.container'); // Get the container element
+  
+    if (x.style.display === "block") {
+      x.style.display = "none";
+      container.classList.remove('change'); // Remove the 'change' class
+    } else {
+      x.style.display = "block";
+      container.classList.add('change'); // Add the 'change' class
+    }
+  }
+  

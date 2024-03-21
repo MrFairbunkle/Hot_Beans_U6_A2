@@ -12,6 +12,15 @@
 <body>
 
     <img class="hero-image" src="HotBeansLandingImage.JPG" alt="Hero Image">
+  
+<nav>
+  <ul>
+    <li><a href="#section1">About</a></li>
+    <li><a href="#section2">Team</a></li>
+    <li><a href="#section3">Services</a></li>
+    <li><a href="#section4">Apply</a></li>
+  </ul>
+</nav>
 
 <header>
   <div class="grid-container">
@@ -33,15 +42,28 @@
   </div>
 </header>
 
-  
-<nav>
-  <ul>
-    <li><a href="#section1">About</a></li>
-    <li><a href="#section2">Team</a></li>
-    <li><a href="#section3">Services</a></li>
-    <li><a href="#section4">Apply</a></li>
-  </ul>
-</nav>
+<div class="burger" onclick="toggleMenu()">
+  <div class="line1"></div>
+  <div class="line2"></div>
+  <div class="line3"></div>
+</div>
+
+<div class="topnav">
+  <p style="margin-left: 10px">{Hotbeans}</p>
+  <div id="myLinks">
+    <a href="#section1">About</a>
+    <a href="#section2">Team</a>
+    <a href="#section3">Services</a>
+    <a href="#section4">Apply</a>
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <div class="container" onclick="myFunction(this)">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+  </a>
+</div>
 
 <section id="section1">
     <h3 class="pagetitle"><b>A brief introduction</b></h3>
