@@ -71,11 +71,11 @@ body {
   section {
     padding: 20px;
     margin-top: 50px;
-    height: 100vh
+    height: auto
   }
 
   .highlight {
-    background-color: #f0f0f0;
+    background-color: #232f3e
   }
 
   .teamimages{
