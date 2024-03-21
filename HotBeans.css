@@ -6,6 +6,23 @@ body {
     color: white;
   }
 
+.header {
+  text-decoration: none;
+  top: 0px;
+}
+
+.grid-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #333;
+}
+
+.grid-item {
+  flex-grow: 1;
+  margin: 0 10px;
+  text-align: center;
+}
+
   .hero-image {
     width: 100%;
     max-width: 100%;
@@ -54,7 +71,7 @@ body {
   section {
     padding: 20px;
     margin-top: 50px;
-    height: 100vh;
+    height: 100vh
   }
 
   .highlight {
