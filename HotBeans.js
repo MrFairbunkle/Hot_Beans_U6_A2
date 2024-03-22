@@ -37,14 +37,14 @@ window.addEventListener('scroll', function() {
 
   function myFunction() {
     var x = document.getElementById("myLinks");
-    var container = document.querySelector('.container'); // Get the container element
+    var container = document.querySelector('.container');
   
     if (x.style.display === "block") {
       x.style.display = "none";
-      container.classList.remove('change'); // Remove the 'change' class
+      container.classList.remove('change'); 
     } else {
       x.style.display = "block";
-      container.classList.add('change'); // Add the 'change' class
+      container.classList.add('change'); 
     }
   }
   
