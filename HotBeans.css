@@ -2,9 +2,15 @@ body {
     font-family: 'Source Code Pro', monospace;
     margin: 0;
     padding: 0;
-    background-color: #232f3e;
-    color: white;
+    background-color: #F0EAD6;
+    color: #232f3e;
   }
+
+.text {
+  margin: 0px 25%;
+  /* margin-left: 100px;
+  margin-right: 350px; */
+}
 
 .header {
   text-decoration: none;
@@ -20,6 +26,7 @@ body {
 }
 
 .grid-item {
+  color: #FAF9F6;
   flex-grow: 1;
   margin: 0 10px;
   text-align: center;
@@ -59,7 +66,7 @@ body {
   }
 
   nav ul li a {
-    color: #fff;
+    color: #FAF9F6;
     text-decoration: none;
     padding: 5px 10px;
     border-radius: 5px;
@@ -95,7 +102,7 @@ body {
 
 footer {
     background-color: #000;
-    color: #fff;
+    color: #FAF9F6;
     text-align: center;
     padding: 20px 0;
     position: relative; 
@@ -105,6 +112,7 @@ footer {
 }
 
 .footer-content {
+    margin: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -120,7 +128,7 @@ footer {
 }
 
 .footer-content ul li a {
-    color: #fff;
+    color: #FAF9F6;
     text-decoration: none;
 }
 
@@ -154,7 +162,7 @@ footer {
     margin: auto;
     background-color: #555;
     height: 500px;
-    color: white;
+    color: #F0EAD6;
     border-radius: 10px;
   }
   
@@ -169,7 +177,7 @@ footer {
   }
   
   .topnav a {
-    color: white;
+    color: #F0EAD6;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
@@ -187,14 +195,9 @@ footer {
   }
   
   .topnav a:hover {
-    background-color: #ddd;
+    background-color: #F0EAD6;
     color: black;
   }
-  
-  .active {
-    background-color: #04AA6D;
-    color: white;
-  }
-  
-  }
+
+}
   
