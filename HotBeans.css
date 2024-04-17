@@ -1,5 +1,5 @@
 body {
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'Hanken Grotesk', monospace;
     margin: 0;
     padding: 0;
     background-color: #F0EAD6;
@@ -149,7 +149,11 @@ footer {
 }
 
   @media screen and (max-width: 600px) {
-  .grid-container{
+  .grid-container {
+    display: none;
+  }
+
+  .hero-image {
     display: none;
   }
 
@@ -160,7 +164,7 @@ footer {
   .mobile-container {
     max-width: 480px;
     margin: auto;
-    background-color: #555;
+    background-color: #F0EAD6;
     height: 500px;
     color: #F0EAD6;
     border-radius: 10px;
@@ -168,7 +172,7 @@ footer {
   
   .topnav {
     overflow: hidden;
-    background-color: #333;
+    background-color: #F0EAD6;
     position: relative;
   }
   
@@ -177,7 +181,7 @@ footer {
   }
   
   .topnav a {
-    color: #F0EAD6;
+    color: #232f3e;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
@@ -185,7 +189,7 @@ footer {
   }
   
   .topnav a.icon {
-    background: rgb(0, 0, 0);
+    background: #F0EAD6;
     width: 24px;
     height: 24px;
     display: block;
