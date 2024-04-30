@@ -12,6 +12,10 @@ body {
   margin-right: 350px; */
 }
 
+mark {
+  background-color: #EEDC5B;
+}
+
 .header {
   text-decoration: none;
   top: 0px;
