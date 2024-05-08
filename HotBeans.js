@@ -43,3 +43,18 @@ window.addEventListener('scroll', function() {
       x.style.display = "block";
     }
   }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    let currentFontSize = 16;
+    function updateFontSize() {
+        document.body.style.fontSize = currentFontSize + 'px';
+    }
+    document.getElementById('increase-font').addEventListener('click', function () {
+        currentFontSize += 2; 
+        updateFontSize();
+    });
+    document.getElementById('decrease-font').addEventListener('click', function () {
+        currentFontSize -= 2;
+        updateFontSize();
+    });
+});
