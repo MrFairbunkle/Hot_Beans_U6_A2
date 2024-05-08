@@ -154,6 +154,11 @@ footer {
   cursor: pointer;
 }
 
+.dark-mode {
+  background-color: #232f3e;
+  color: #F0EAD6;
+}
+
 @media screen and (min-width: 600px) {
   .topnav {
       display: none;
@@ -184,7 +189,6 @@ footer {
   
   .topnav {
     overflow: hidden;
-    background-color: #F0EAD6;
     position: relative;
   }
   

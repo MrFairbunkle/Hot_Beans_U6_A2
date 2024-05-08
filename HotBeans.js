@@ -46,15 +46,33 @@ window.addEventListener('scroll', function() {
 
   document.addEventListener('DOMContentLoaded', function () {
     let currentFontSize = 16;
-    function updateFontSize() {
+    let isDarkMode = false;
+
+    function updateStyles() {
         document.body.style.fontSize = currentFontSize + 'px';
+        if (isDarkMode) {
+            document.body.classList.add('dark-mode');
+        } else {
+            document.body.classList.remove('dark-mode');
+        }
     }
+
+    function toggleColors() {
+        isDarkMode = !isDarkMode;
+        updateStyles();
+    }
+
     document.getElementById('increase-font').addEventListener('click', function () {
-        currentFontSize += 2; 
-        updateFontSize();
+        currentFontSize += 2;
+        updateStyles();
     });
+
     document.getElementById('decrease-font').addEventListener('click', function () {
         currentFontSize -= 2;
-        updateFontSize();
+        updateStyles();
+    });
+
+    document.getElementById('toggle-colors').addEventListener('click', function () {
+        toggleColors();
     });
 });
