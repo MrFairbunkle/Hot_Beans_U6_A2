@@ -1,223 +1,190 @@
-body {
-    font-family: 'Hanken Grotesk', monospace;
-    margin: 0;
-    padding: 0;
-    background-color: #F0EAD6;
-    color: #232f3e;
-  }
+import random, os
 
-.text {
-  margin: 0px 25%;
-  /* margin-left: 100px;
-  margin-right: 350px; */
+# Variables
+html_file_path = "site.html"
+css_file_path = "style.css"
+
+# Inputs from user
+site_name = input("What is your site called? ")
+site_sections = input("What sections would you like? Please separate with commas and spaces. ")
+site_col_choice = input("What would you like the main color to be? Please use rgb. ")
+text_col_choice = input("What would you like the text color to be? Please use rgb. ")
+site_col = site_col_choice
+text_col = text_col_choice
+
+# Preset options
+presets = {
+    "Reset": {
+        "site_col": site_col_choice,
+        "text_col": text_col_choice
+    },
+    "Test1": {
+        "site_col": "#ff0000",
+        "text_col": "#0000ff"
+    },
+    "Test2": {
+        "site_col": "#333",
+        "text_col": "#fff"
+    },
+    "Test3": {
+        "site_col": "#fff",
+        "text_col": "#333"
+    }
 }
 
-mark {
-  background-color: #EEDC5B;
-}
+# Converts preset options to strings so that the thing below works 
+preset_options = ", ".join(presets.keys()) # This was chatgpt
 
-.header {
-  text-decoration: none;
-  top: 0px;
-}
+while True:
+    preset = input("Would you like to use a preset? (Overwrites your color choices) Y/N ").title()
+    if preset == "Y":
+        option = input(f"Choose a preset ({preset_options}): ").title()
+        
+        if option in presets:
+            site_col = presets[option]["site_col"]
+            text_col = presets[option]["text_col"]
+            break
+        else:
+            print("Invalid preset option.")
+    elif preset == "N":
+        break
 
-.grid-container {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  background-color: #232f3e;
-  padding: 25px
-}
+# Makes correct number of sections
+section_names = site_sections.split(", ")
 
-.grid-item {
-  color: #FAF9F6;
-  flex-grow: 1;
-  margin: 0 10px;
-  text-align: center;
-}
+# Basic skeleton
+html = f"""
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>{site_name}</title>
+    <style>
+        body {{
+            background-color: {site_col};
+            color: {text_col};
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }}
+        .menu {{
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #000;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }}
+        .menu-options {{
+            display: none;
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background-color: #fff;
+            color: #000;
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 200px;
+        }}
+        .menu-options h3 {{
+            margin: 0;
+            margin-bottom: 10px;
+            background-color: #fff;
+            color: #000;
+        }}
+        .menu-options button {{
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 5px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 3px;
+        }}
+    </style>
+        """
 
-  .hero-image {
-    width: 100%;
-    max-width: 100%;
-    height: 100vh;
-    display: block;
-  }
+if option in presets:
+    if option == "Test1":
+        html += """
+        <nav>
+        """
+        
+        for section_name in section_names:
+            html += """
+                <li>
+                    <a href="#{section_name}">{section_name}</a>
+                </li>
+            """
 
-  .pagetitle {
-    text-align: center;
-  }
+        html += """
+        </nav>
+        """
 
-  nav {
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #333;
-    padding: 10px 0;
-    z-index: 1000;
-  }
+        html += """
+        <style>
+            .nav {{
+            
+            }}
+        </style>
+            """
 
-  nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 10px;
-    text-align: center;
-  }
+        html += """
+    <script>
+        const presets = {presets}; 
 
-  nav ul li {
-    display: inline;
-    margin: 0 10px;  
-  }
+        function toggleMenu() {{
+            const menu = document.querySelector('.menu-options');
+            menu.style.display = menu.style.display === 'none' || menu.style.display === '' ? 'block' : 'none';
+        }}
 
-  nav ul li a {
-    color: #FAF9F6;
-    text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
+        function applyPreset(color, textColor) {{
+            document.body.style.backgroundColor = color;
+            document.body.style.color = textColor;
+        }}
 
-  nav ul li a:hover {
-    background-color: #555;
-  }
+        window.onload = function() {{
+            const menuOptions = document.querySelector('.menu-options');
+            for (let preset in presets) {{
+                const btn = document.createElement('button');
+                btn.textContent = preset;
+                btn.onclick = function() {{
+                    applyPreset(presets[preset].site_col, presets[preset].text_col);
+                }};
+                menuOptions.appendChild(btn);
+            }}
+        }};
+    </script>
+</head>
+<body>
+    <h1>{site_name}</h1>
+    <div class="menu" onclick="toggleMenu()">Menu</div>
+    <div class="menu-options">
+        <h3>Choose a Preset</h3>
+    </div>
+    <br>
+"""
 
-  section {
-    padding: 20px;
-    margin-top: 50px;
-    height: auto
-  }
+for section_name in section_names:
+    html += f"""
+    <h2>{section_name}</h2>
+    <p>This is filler text</p>
+    <br>
+    """
 
-  .highlight {
-    background-color: #232f3e
-  }
+html += """
+</body>
+</html>
+"""
 
-  .teamimages{
-    display: block;
-    width: 400px;
-    height: 250px;  
-    margin: 0 auto;
-  }
-
-  .wrapper {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-footer {
-    background-color: #000;
-    color: #FAF9F6;
-    text-align: center;
-    padding: 20px 0;
-    position: relative; 
-    width: 100%; 
-    bottom: 0; 
-    left: 0;
-}
-
-.footer-content {
-    margin: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.footer-content ul {
-    list-style: none;
-}
-
-.footer-content ul li {
-    display: inline-block;
-    margin-right: 10px;
-}
-
-.footer-content ul li a {
-    color: #FAF9F6;
-    text-decoration: none;
-}
-
-.footer-content ul li a:hover {
-    text-decoration: underline;
-}
-
-#font-size-menu {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  z-index: 100000
-}
-
-#font-size-menu button {
-  font-size: 16px;
-  margin: 0 5px;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-.dark-mode {
-  background-color: #232f3e;
-  color: #F0EAD6;
-}
-
-@media screen and (min-width: 600px) {
-  .topnav {
-      display: none;
-  }
-}
-
-  @media screen and (max-width: 600px) {
-  .grid-container {
-    display: none;
-  }
-
-  .hero-image {
-    display: none;
-  }
-
-  nav {
-    display: none;
-  }
-
-  .mobile-container {
-    max-width: 480px;
-    margin: auto;
-    background-color: #F0EAD6;
-    height: 500px;
-    color: #F0EAD6;
-    border-radius: 10px;
-  }
-  
-  .topnav {
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .topnav #myLinks {
-    display: none;
-  }
-  
-  .topnav a {
-    color: #232f3e;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    display: block;
-  }
-  
-  .topnav a.icon {
-    background: #F0EAD6;
-    width: 24px;
-    height: 24px;
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  
-  .topnav a:hover {
-    background-color: #F0EAD6;
-    color: black;
-  }
-
-}
-  
+try:
+    with open(html_file_path, 'w') as file:
+        file.write(html)
+    print(f"The content has been saved to {html_file_path}")
+except Exception as e:
+    print(f"An error occurred while writing to the file: {str(e)}")
