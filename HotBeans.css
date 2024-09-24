@@ -35,6 +35,7 @@ presets = {
 # Converts preset options to strings so that the thing below works 
 preset_options = ", ".join(presets.keys()) # This was chatgpt
 
+option="" 
 while True:
     preset = input("Would you like to use a preset? (Overwrites your color choices) Y/N ").title()
     if preset == "Y":
@@ -109,32 +110,32 @@ html = f"""
     </style>
         """
 
-if option in presets:
-    if option == "Test1":
-        html += """
-        <nav>
-        """
+# if option in presets:
+#     if option == "Test1":
+#         html += """
+#         <nav>
+#         """
         
-        for section_name in section_names:
-            html += """
-                <li>
-                    <a href="#{section_name}">{section_name}</a>
-                </li>
-            """
+#         for section_name in section_names:
+#             html += """
+#                 <li>
+#                     <a href="#{section_name}">{section_name}</a>
+#                 </li>
+#             """
 
-        html += """
-        </nav>
-        """
+#         html += """
+#         </nav>
+#         """
 
-        html += """
-        <style>
-            .nav {{
+#         html += """
+#         <style>
+#             .nav {{
             
-            }}
-        </style>
-            """
+#             }}
+#         </style>
+#             """
 
-        html += """
+html += f"""
     <script>
         const presets = {presets}; 
 
